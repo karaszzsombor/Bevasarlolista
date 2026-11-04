@@ -34,6 +34,7 @@ namespace Bevasarlolista
                 lkjvds.Add(textbox.Text);
                 listbox.Items.Refresh();
                 textbox.Text = "";
+                label.Content = lkjvds.Count().ToString();
             }
         }
 
@@ -47,6 +48,7 @@ namespace Bevasarlolista
             {
                 lkjvds.Remove(listbox.SelectedItem as string);
                 listbox.Items.Refresh();
+                label.Content = lkjvds.Count().ToString();
             }
         }
         private void btn_add_Click(object sender, RoutedEventArgs e)
@@ -75,10 +77,19 @@ namespace Bevasarlolista
             del();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_del_all_Click(object sender, RoutedEventArgs e)
         {
-            lkjvds.Clear();
-            listbox.Items.Refresh();
+            if (lkjvds.Count() == 0)
+            {
+                MessageBox.Show("hiba", "hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                lkjvds.Clear();
+                listbox.Items.Refresh();
+                label.Content = lkjvds.Count().ToString();
+            }
+
         }
     }
 }
