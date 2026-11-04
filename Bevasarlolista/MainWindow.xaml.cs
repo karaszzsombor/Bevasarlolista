@@ -74,5 +74,11 @@ namespace Bevasarlolista
         {
             del();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            lkjvds.Clear();
+            listbox.Items.Refresh();
+        }
     }
 }
