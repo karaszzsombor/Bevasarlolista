@@ -12,5 +12,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <ListBox Grid.Column="0" x:Name="listbox"></ListBox>
+        <Button x:Name="btn_add" Content="Hozzáad" Grid.Column="1" Width="103" Height="20" HorizontalAlignment="Left" VerticalAlignment="top" Margin="8,60,0,0" Click="btn_add_Click"/>
+        <TextBox x:Name="textbox" Grid.Column="1" Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,30,0,0"/>
     </Grid>
 </Window>

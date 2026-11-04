@@ -16,9 +16,17 @@ namespace Bevasarlolista
     /// </summary>
     public partial class MainWindow : Window
     {
+
+
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btn_add_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
