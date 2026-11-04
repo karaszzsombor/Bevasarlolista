@@ -23,20 +23,56 @@ namespace Bevasarlolista
             InitializeComponent();
             listbox.ItemsSource = lkjvds;
         }
+        public void add()
+        {
+            if(textbox.Text == "")
+            {
+                MessageBox.Show("hiba", "hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                lkjvds.Add(textbox.Text);
+                listbox.Items.Refresh();
+                textbox.Text = "";
+            }
+        }
 
+        public void del()
+        {
+            if(listbox.SelectedItem == null)
+            {
+                MessageBox.Show("hiba", "hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                lkjvds.Remove(listbox.SelectedItem as string);
+                listbox.Items.Refresh();
+            }
+        }
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
-            lkjvds.Add(textbox.Text);
-            listbox.Items.Refresh();
+            add();
         }
 
         private void textbox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                lkjvds.Add(textbox.Text);
-                listbox.Items.Refresh();
+                add();
             }
+        }
+
+        private void listbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Delete)
+            {
+                del();
+            }
+        }
+
+        private void btn_del_Click(object sender, RoutedEventArgs e)
+        {
+            del();
         }
     }
 }
